@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/assets/css/home.css" />
+  <title>{{ .title }}</title>
+</head>
+
+<body class="bg-stone p-md-5">
+  <main class="container-md p-md-5 bg-white rounded-5">
+    <img src="/assets/images/image-omelette.jpeg" alt="omelette" class="img-fluid rounded-5" />
+
+    <div>
+      <div>
+        <h1 class="text-black lh-lg">Simple Omelette Recipe</h1>
+        <p class="text-black-50">
+          An easy and quick dish, perfect for any meal. This classic omelette
+          combines beaten eggs cooked to perfection, optionally filled with
+          your choice of cheese, vegetables, or meats.
+        </p>
+      </div>
+
+      <div class="bg-rose p-3 rounded">
+        <h3 class="text-pink">Preparation time</h3>
+        <ul>
+          {{ range .preparation }}
+          <li>{{.}}</li>
+          {{end}}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-brown lh-lg">Ingredients</h2>
+
+        <ul>
+          {{ range .ingredients }}
+          <li class="text-brown lh-lg">{{.}}</li>
+          {{ end }}
+        </ul>
+      </div>
+      <hr />
+      <div>
+        <h2 class="text-brown">Instructions</h2>
+        <div>
+          {{ range $i, $v := .instructions }}
+          <div class="d-flex gap-4 mb-1">
+            <span class="text-brown">{{ add $i 1}}.</span>
+            <span>
+              <span class="fw-bold text-stone600">{{ printf "%v:" .Title }}</span>
+              <span> {{ printf "%v" .Description }}</span>
+            </span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <hr />
+
+      <div>
+        <h2 class="text-brown">Nutrition</h2>
+        <p>
+          The table below shows nutritional values per serving without the
+          additional fillings.
+        </p>
+        <table class="table table-hover">
+          <tbody>
+            {{ range .nutrition }}
+            <tr>
+              <td>{{ .Name }}</td>
+              <td>
+                <span class="text-brown">{{ .Value }}</span>
+              </td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container mt-3">
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="https://github.com/maxmx03" target="_blank">Milianor</a>.
+    </div>
+  </footer>
+</body>
+
+</html>
