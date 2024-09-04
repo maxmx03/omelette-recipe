@@ -3,6 +3,9 @@
 This is a solution to the [Recipe page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm). Frontend Mentor challenges help you improve your coding skills by building
 realistic projects.
 
+![20240904_11h38m37s_grim](https://github.com/user-attachments/assets/63a6af84-c301-4e90-912c-3104a394ca79)
+
+
 ## Table of contents
 
 - [Overview](#overview)
